@@ -1,15 +1,17 @@
 const path = require('path');
+
 module.exports = {
-    entry: ['./index.js','./index.jsx'],
+    mode: 'development',
+    entry: ['./src/index.jsx'],
     output: {
-        filename: 'bundle.js',
+        filename: 'src/bundle.js',
         path: path.resolve('./')
     },
     devServer:{
         contentBase: "./src",
         historyApiFallback: true,
         inline: true,
-        port: 9000,
+        port: 8888,
         openPage: 'index.html'
     },
     module:{
