@@ -17,7 +17,8 @@ body{
     font-size: 24px;        
     height: 75px;           
     width: 220px;           
-    border:none;            
+    border:none;
+    cursor: pointer        
 }
 
 
@@ -27,3 +28,8 @@ body{
     border-bottom:solid 5px #00408B;
     outline: none     
 } 
+
+.inputName{
+    padding-left: 50px;
+    padding-top: 25px;
+}

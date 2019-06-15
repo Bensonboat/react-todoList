@@ -1,11 +1,10 @@
 {
-  "name": "2dolist",
+  "name": "react-env",
   "version": "1.0.0",
-  "description": "new description",
+  "description": "new description for to do list",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "webpack-dev-server --open"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

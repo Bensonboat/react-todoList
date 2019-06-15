@@ -11,7 +11,7 @@ module.exports = {
         contentBase: "./src",
         historyApiFallback: true,
         inline: true,
-        port: 8888,
+        port: 9000,
         openPage: 'index.html'
     },
     module:{
