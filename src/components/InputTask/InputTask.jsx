@@ -1,9 +1,10 @@
 import React from 'react'
 import { InputTasksForm } from '../InputTasksForm'
 import { addTodoList } from '../../actions'
+import { connect } from 'react-redux';
 
 
-class InputTask extends React.Component {
+class ConnectInputTask extends React.Component {
 
     constructor(props) {
         super(props)
@@ -27,7 +28,7 @@ class InputTask extends React.Component {
         let value = event.target.value
         if (event.target.name === 'file') {
             value = value.substring(value.lastIndexOf('\\') + 1)          // ??????
-        } else if (event.target.name === 'completed') {
+        } else if (event.target.name === 'complete') {
             value = event.target.checked
         }
 
@@ -35,15 +36,15 @@ class InputTask extends React.Component {
     }
 
     tagImportant() {
-        if (this.state.important == '') {
-            this.state.important == 'Y'
+        if (this.state.important === '') {
+            this.setState({ important: 'Y'})
         } else {
-            this.state.important == ''
+            this.setState({ important: ''})
         }
     }
 
     submitTodo(){
-        if(this.state.name == ''){
+        if(this.state.name === ''){
             alert('Please enter the targer!!')
         } else {
             this.props.addTodoList(this.state)  // 從哪裡傳進來的 ??  props 用處? redux算是這個的父組件??
@@ -69,25 +70,38 @@ class InputTask extends React.Component {
     render() {
         return (
             <div>
-                <div class={this.state.important == 'Y' ? 'important inputTaskTitle' : 'inputTaskTitle'}>
-                    <input name='completed' type="checkbox" class="taskChk"
+                <div class={this.state.important === 'Y' ? 'important inputTaskTitle' : 'inputTaskTitle'}>
+                    <input name='complete' type="checkbox" class="taskChk"
                         checked={this.state.complete}
                         onChange={this.changeState} />
 
                     <input name='name' type="text" class="taskTitle" placeholder="Type Something Here…"
-                        class={'taskTitle' + (this.state.important == 'Y' ? 'important' : '') + (this.state.completed ? 'complete' : '')}  // 兩種 class 判斷新增的寫法  <-- & div的地方
+                        class={'taskTitle' + (this.state.important === 'Y' ? ' important' : '') + (this.state.complete ? ' complete' : '')}  // 兩種 class 判斷新增的寫法  <-- & div的地方
                         value={this.state.name}
                         onChange={this.changeState} />
 
-                    <i class={this.state.important == 'Y' ? 'fas fa-star fa-lg icon iconImportant' : 'far fa-star fa-lg icon'}
+                    <i class={this.state.important === 'Y' ? 'fas fa-star fa-lg icon iconImportant' : 'far fa-star fa-lg icon'}
                         onClick={this.tagImportant}></i>
 
                     <i class="fas fa-pen fa-lg icon icon_edit"></i>
                 </div>
-                <InputTasksForm closeAdd={this.props.closeAdd} />
+                <InputTasksForm closeAdd={this.props.closeAdd}
+                                stateData={this.state}
+                                changeState={this.changeState}
+                                submitTodo={this.submitTodo}
+                                filebox={this.filebox} />
             </div>
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return{
+        //使用dispatch呼叫事件addTodoList操作store
+        addTodoList: todoList => dispatch(addTodoList(todoList))
+    }
+}
+
+const InputTask = connect(null,mapDispatchToProps)(ConnectInputTask)
 
 export { InputTask }

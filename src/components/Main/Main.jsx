@@ -4,6 +4,7 @@ import { TopBlock } from "../TopBlock"
 import { HashRouter, Route } from "react-router-dom"
 import { MyTasks } from '../MyTasks'
 
+import { Provider } from 'react-redux'
 
 //匯入store和建構動作的事件
 import {todoListStore} from "../../store"
@@ -13,12 +14,14 @@ import {addTodoList} from "../../actions"
 class Main extends React.Component {
     render() {
         return (
-            <HashRouter>
-                <div>
-                    <TopBlock />
-                    <Route exact path='/' component={MyTasks}></Route>
-                </div>
-            </HashRouter>
+            <Provider store={todoListStore}>
+                <HashRouter>
+                    <div>
+                        <TopBlock />
+                        <Route exact path='/' component={MyTasks}></Route>
+                    </div>
+                </HashRouter>
+            </Provider>
         )
     }
 }
