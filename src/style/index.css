@@ -123,11 +123,35 @@ body{
     color: #9B9B9B;
 }
 
-/*更換背景顏色*/
-.important{
-    background: #FFF2DC;
-}
+
 /*更換icon顏色*/
 .iconImportant{
     color: #F5A623;
+}
+
+/* //事項框框的樣式 */
+.list{
+    background: #F2F2F2;
+    height: 100px;
+    width: 620px;
+    border-radius: 5px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* //要離上面20px */
+.listBlock{
+    margin-top: 20px;
+}
+
+.listIcon{
+    color: #757575;
+    margin-top: -15px;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+/*更換背景顏色*/
+.important{
+    background: #FFF2DC;
 }

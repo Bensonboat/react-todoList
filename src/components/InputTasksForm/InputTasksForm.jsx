@@ -12,12 +12,14 @@ class InputTasksForm extends React.Component{
                         <input  name='date' 
                                 type="date" 
                                 class="inputStyle inputDateTime" 
-                                value={this.props.stateData.date} />
+                                value={this.props.stateData.date}
+                                onChange = {this.props.changeState} />
                         
                         <input  name='time' 
                                 type="time" 
                                 class="inputStyle inputDateTime" 
-                                value={this.props.stateData.time} />
+                                value={this.props.stateData.time}
+                                onChange = {this.props.changeState} />
                     </div>
 
                     <InputName className="fas fa-file" inputName="File" />
