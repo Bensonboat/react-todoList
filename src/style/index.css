@@ -3,6 +3,7 @@ body{
     background: #E1E1E1;
 }
 
+
 #topBlock{
     background: #4A90E2;
     height: 75px;
@@ -11,71 +12,44 @@ body{
 }
 
 .bookMark{
-    background: #4A90E2;    
-    color: #00408B;         
-    text-align: center;        
-    font-size: 24px;        
-    height: 75px;           
-    width: 220px;           
+    background: #4A90E2;
+    color: #00408B;
+    text-align: center;
+    font-size: 24px;
+    height: 75px;
+    width: 220px;
     border:none;
-    cursor: pointer        
 }
 
-
- .select_bookMark{
-     color: #ffffff; 
-    height: 70px;                        
+.select_bookMark{
+    color: #ffffff;
+    height: 70px;
     border-bottom:solid 5px #00408B;
-    outline: none     
-} 
-
-.inputName{
-    padding-left: 50px;
-    padding-top: 25px;
 }
 
-.InputTasksForm{
+
+.alignCenter{
+    text-align: center;
+}
+
+#addTask{
+    width: 620px;
+    height: 65px;
+    font-size: 24px;
+    color: #C8C8C8;
+    border: 2px solid #C8C8C8;
+    border-radius: 5px;
+}
+
+.inputTasksForm{
     width: 620px;
     margin: 0 auto;
 }
 
-.InputTask{
+.inputTask{
     height: 385px;
     background: #F2F2F2;
     text-align: left;
-}
-
-/*輸入框的縮排比文字還要裡面*/
-.inputForm{
-    padding-left: 75px;
-}
-/*輸入框去除框線和調整字體大小*/
-.inputStyle{
-    border:none;
-    font-size: 16px;
-}
-/*日期匡要調整長寬，看起來比較順眼*/
-.inputDateTime{
-    height: 35px;
-    width: 162px;
-}
-
-/*共同樣式，長、寬、字體大小、對齊、取消框線*/
-.addButton{
-    width: 310px;
-    height: 60px;
-    font-size: 24px;
-    text-align: center;
-    border:none;
-}
-/*分別設定按鈕顏色及字的顏色*/
-.saveButton{
-    background: #4A90E2;
-    color: #ffffff;
-}
-.cancelButton{
-    background: #fffffd;
-    color: #D0021B;
 }
 
 .inputTaskTitle{
@@ -95,7 +69,7 @@ body{
     font-size: 24px;
     margin: 25px;
 }
-/*要把勾選框變兩倍大，還要距離左邊界一些距離*/
+
 .taskChk{
     margin-left: 20px;
     zoom: 2;
@@ -109,37 +83,52 @@ body{
     color: #4A90E2;
 }
 
-#addTask{
-    width: 620px;
-    height: 65px;
+.inputName{
+    padding-left: 50px;
+    padding-top: 25px;
+}
+
+.inputForm{
+    padding-left: 75px;
+}
+
+.inputStyle{
+    border:none;
+    font-size: 16px;
+}
+
+.inputDateTime{
+    height: 35px;
+    width: 162px;
+}
+
+.addButton{
+    width: 310px;
+    height: 60px;
     font-size: 24px;
-    color: #C8C8C8;
-    border: 2px solid #C8C8C8;
-    border-radius: 5px;
+    text-align: center;
+    border:none;
 }
 
-.complete{
-    text-decoration: line-through;
-    color: #9B9B9B;
+.saveButton{
+    background: #4A90E2;
+    color: #ffffff;
 }
 
-
-/*更換icon顏色*/
-.iconImportant{
-    color: #F5A623;
+.cancelButton{
+    background: #fffffd;
+    color: #D0021B;
 }
 
-/* //事項框框的樣式 */
 .list{
     background: #F2F2F2;
     height: 100px;
     width: 620px;
     border-radius: 5px;
     text-align: left;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
-/* //要離上面20px */
 .listBlock{
     margin-top: 20px;
 }
@@ -151,7 +140,22 @@ body{
     font-size: 16px;
 }
 
-/*更換背景顏色*/
+.countText{
+    margin:5px;
+    text-align: left;
+    font-size: 24px;
+    color: #C8C8C8;
+}
+
+.complete{
+    text-decoration: line-through;
+    color: #9B9B9B;
+}
+
 .important{
     background: #FFF2DC;
+}
+
+.iconImportant{
+    color: #F5A623;
 }

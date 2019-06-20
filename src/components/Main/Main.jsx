@@ -10,15 +10,20 @@ import { Provider } from 'react-redux'
 import {todoListStore} from "../../store"
 import {addTodoList} from "../../actions"
 
+import { InProgress } from '../InProgress'
+import { Completed } from '../Completed'
+
 
 class Main extends React.Component {
     render() {
         return (
             <Provider store={todoListStore}>
                 <HashRouter>
-                    <div>
+                    <div class='alignCenter'>
                         <TopBlock />
                         <Route exact path='/' component={MyTasks}></Route>
+                        <Route exact path='/inProgress' component={InProgress}></Route>
+                        <Route exact path='/completed' component={Completed}></Route>
                     </div>
                 </HashRouter>
             </Provider>
